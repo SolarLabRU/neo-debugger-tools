@@ -68,6 +68,7 @@
     <Compile Include="IApiInterface.cs" />
     <Compile Include="Emulator.cs" />
     <Compile Include="NeoLux.cs" />
+    <Compile Include="ScriptTable.cs" />
     <Compile Include="StorageContext.cs" />
     <Compile Include="TestCases.cs" />
     <Compile Include="TriggerType.cs" />
