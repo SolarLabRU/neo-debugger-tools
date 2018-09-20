@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Neo.Emulator</id>
-    <version>1.0</version>
-    <title>Neo.Emulator</title>
-    <authors>Sérgio Flores</authors>
-    <owners>Sérgio Flores</owners>
-    <projectUrl>https://github.com/CityOfZion/neo-debugger-tools/</projectUrl>
+    <id>Solarl.Neo.Emulator</id>
+    <version>1.0.1</version>
+    <title>SolarLab Neo.Emulator</title>
+    <authors>SolarLab</authors>
+    <owners>SolarLab</owners>
+    <licenseUrl>https://github.com/SolarLabRU/neo-debugger-tools/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/SolarLabRU/neo-debugger-tools</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/29305619</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>NEO smart contract / blockchain emulator.</description>
-    <copyright>Copyright 2017</copyright>
-    <tags>NEO Emulator dApp Wallet Blockchain Smart Contract</tags>
+    <description>SolarLab Neo.Emulator</description>
+    <releaseNotes>SolarLab Neo.Emulator.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>NEO Emulator Wallet Blockchain Smart Contract</tags>
   </metadata>
 </package>
