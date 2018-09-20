@@ -63,11 +63,11 @@ namespace Neo.Emulation
         public static Storage GetStorage(this ExecutionEngine engine)
         {
             var emulator = engine.GetEmulator();
-            return emulator.currentAccount.storage;
+            return emulator.GetStorage();
         }
     }
 
-    public class Emulator 
+    public class Emulator
     {
         public enum Type
         {
@@ -129,10 +129,25 @@ namespace Neo.Emulation
 
         public Action<EmulatorStepInfo> OnStep;
 
-        public Emulator(Blockchain blockchain)
+        private Storage sharedAccountStorage = null;
+
+        public Emulator(Blockchain blockchain, bool useSharedAccountStorage = false)
         {
             this.blockchain = blockchain;
-            this.interop = new InteropService();            
+            this.interop = new InteropService();
+            if (useSharedAccountStorage)
+            {
+                this.sharedAccountStorage = new Storage();
+            }
+        }
+
+        public Storage GetStorage()
+        {
+            if (this.sharedAccountStorage != null)
+            {
+                return this.sharedAccountStorage;
+            }
+            return this.currentAccount.storage;
         }
 
         public int GetInstructionPtr()
@@ -218,7 +233,7 @@ namespace Neo.Emulation
                         Emulator.Type hint = method != null ? method.inputs[index].type : Emulator.Type.Unknown;
 
                         var obj = Emulator.ConvertArgument(item, hint);
-                        
+
                         items.Push(obj);
 
                         index++;
@@ -335,7 +350,7 @@ namespace Neo.Emulation
                 return false;
             }
         }
-        
+
         /// <summary>
         /// executes a single instruction in the current script, and returns the last script offset
         /// </summary>
@@ -477,7 +492,7 @@ namespace Neo.Emulation
             tx.outputs.Add(new API.TransactionOutput(assetID, total_amount - amount, src_hash));
 
             blockchain.ConfirmBlock(block);
-          
+
             this.currentTransaction = tx;
         }
         #endregion
@@ -511,7 +526,7 @@ namespace Neo.Emulation
                     {
                         index--;
                         arr[index] = byte.Parse(child.Value);
-                   }
+                    }
                     return arr;
                 }
                 else
