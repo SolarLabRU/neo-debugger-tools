@@ -15,6 +15,20 @@ namespace Neo.VM
 {
     public class ExecutionEngine : IDisposable
     {
+        #region Limits
+
+        /// <summary>
+        /// Set Max Item Size
+        /// </summary>
+        public const uint MaxItemSize = 1024 * 1024;
+
+        /// <summary>
+        /// Set Max Array Size
+        /// </summary>
+        public const uint MaxArraySize = 1024;
+
+        #endregion
+
         private readonly IScriptTable table;
         private readonly InteropService service;
 

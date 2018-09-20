@@ -75,8 +75,10 @@
     <Compile Include="Utils\RandomUtils.cs" />
     <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Utils\StackItemUtils.cs" />
+    <Compile Include="VM\ContainerPlaceholder.cs" />
     <Compile Include="VM\ExecutionContext.cs" />
     <Compile Include="VM\ExecutionEngine.cs" />
+    <Compile Include="VM\StackItemType.cs" />
     <Compile Include="VM\VMUtils.cs" />
     <Compile Include="VM\ICrypto.cs" />
     <Compile Include="VM\IInteropInterface.cs" />
