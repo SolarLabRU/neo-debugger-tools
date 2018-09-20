@@ -750,6 +750,10 @@ namespace Neo.VM
                                     {
                                         EvaluationStack.Push(value);
                                     }
+                                    else if (map.TryGetValue((int)key.GetBigInteger(), out value))
+                                    {
+                                        EvaluationStack.Push(value);
+                                    }
                                     else
                                     {
                                         State |= VMState.FAULT;
